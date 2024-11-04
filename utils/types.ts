@@ -1,12 +1,10 @@
-export type ToDoType = {
-  id: string;
-  title: string;
-  description?: string;
-  completed: boolean;
-  user_id: string;
-  created_at: string;
-  updated_at: string;
-};
+import { Todo } from '@prisma/client';
+
+export interface TodoWithUser extends Todo {
+  user: {
+    username: string;
+  };
+}
 
 export type UserType = {
   id: string;
